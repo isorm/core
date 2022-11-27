@@ -7,11 +7,11 @@ class AppController {
   constructor(private service: AppService) {}
 
   @Get("test:key")
-  getApp(@Res res: Response, @Req req: Request) {
-    console.log(req.params.key);
-    const result = this.service.sayHello();
+  async getApp(@Res res: Response, @Req req: Request) {
+    const name = req.params?.key || "";
+    const hello = this.service.sayHello();
 
-    return res.json({ result });
+    return res.json({ result: `${hello} ${name}` });
   }
 }
 
