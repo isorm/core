@@ -23,3 +23,11 @@ export const Next = (target: any, propKey: string, paramIndex: number) => {
     target,
   });
 };
+
+export const Params = (target: any, propKey: string, paramIndex: number) => {
+  restPropDecorHandler({
+    propType: "params",
+    paramIndex,
+    target,
+  });
+};

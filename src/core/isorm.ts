@@ -41,6 +41,7 @@ const Isorm = ({
             if (prop.type === "req") prop.attach = req;
             if (prop.type === "res") prop.attach = res;
             if (prop.type === "next") prop.attach = next;
+            if (prop.type === "params") prop.attach = req.params;
 
             props[i] = prop;
           }

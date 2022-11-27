@@ -3,6 +3,7 @@ import {
   Controller,
   Get,
   Module,
+  Params,
   Req,
   Res,
   Use,
@@ -29,8 +30,12 @@ class AppController {
     return next();
   })
   @Get("test:key")
-  async getApp(@Res res: Response, @Req req: Request) {
-    const name = req.params?.key || "";
+  async getApp(
+    @Res res: Response,
+    @Req req: Request,
+    @Params { key }: { key: string },
+  ) {
+    const name = key || "";
     const hello = this.service.sayHello();
 
     return res.json({ result: `${hello} ${name}` });
