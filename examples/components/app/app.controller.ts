@@ -1,12 +1,5 @@
 import { Request, Response } from "express";
-import {
-  Controller,
-  Get,
-  methodDecorWrapper,
-  Req,
-  Res,
-} from "../../../src/isorm-core";
-import { Use } from "./app.modules";
+import { Controller, Get, Req, Res, Use } from "../../../src/isorm-core";
 import AppService from "./app.service";
 
 @Controller("/app")
@@ -20,7 +13,10 @@ class AppController {
     return res.json({ result: `${hello} World` });
   }
 
-  @Use()
+  @Use((req, res, next) => {
+    console.log(req.url);
+    return next();
+  })
   @Get("test:key")
   async getApp(@Res res: Response, @Req req: Request) {
     const name = req.params?.key || "";
