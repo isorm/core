@@ -35,3 +35,12 @@ export type DatasetSchemaType = Partial<{
   route: MethodRouteObject[];
   modules: ModuleType[];
 }>;
+
+export type IsormType = {
+  controllers: { new (...args: any): unknown }[];
+  modules: ModuleType[];
+  configs?: Partial<{
+    port: number; // default : 3000
+    autolisten: boolean; // default : true
+  }>;
+};

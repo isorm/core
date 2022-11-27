@@ -1,20 +1,12 @@
 import { Request, Response, Router, NextFunction } from "express";
 import { join } from "path";
+import { IsormType } from "../../index.d";
 import { Container } from "../libs/DI";
 import { AppMetadata } from "../libs/metadata";
 import app from "./app";
 import { APP_DATA } from "./defaults";
 
-const Isorm = ({
-  controllers,
-  configs,
-}: {
-  controllers: { new (...args: any): unknown }[];
-  configs?: Partial<{
-    port: number; // default : 3000
-    autolisten: boolean; // default : true
-  }>;
-}) => {
+const Isorm = ({ controllers, modules, configs }: IsormType) => {
   let routes = [];
   let i = 0;
   for (i = 0; i < controllers.length; i++) {
@@ -22,6 +14,8 @@ const Isorm = ({
     const info = AppMetadata.get(controller);
 
     const route = Router() as any;
+
+    route.use(...modules);
 
     (info.route || []).map((item: any, i: number) => {
       const endpoint = join("/", info?.path, item.endpoint)
