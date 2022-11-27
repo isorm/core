@@ -2,11 +2,11 @@
   "name": "core",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
+  "main": "examples/bootstrap.ts",
   "scripts": {
-    "dev": "concurrently --kill-others --names \"build,run\" -c \"yellow.bold,green.bold\" \"tsc -w\" \"nodemon -q -w dist bin/www.js\"",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "example": "ts-node-dev --respawn examples/bootstrap.ts src/**/*"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "reflect-metadata": "^0.1.13",
     "supertest": "^6.3.1",
     "ts-jest": "^29.0.3",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.9.3"
   },
   "dependencies": {

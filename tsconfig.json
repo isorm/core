@@ -13,6 +13,6 @@
     "allowJs": true
   },
   "files": ["./index.d.ts"],
-  "include": ["src", "index.d.ts", "tests/**/*"],
+  "include": ["src", "index.d.ts", "tests/**/*","examples/**/*"],
   "exclude": ["dist", "node_modules"]
 }
