@@ -11,7 +11,8 @@ const Isorm = ({
 }: {
   controllers: { new (...args: any): unknown }[];
   configs?: Partial<{
-    port: number;
+    port: number; // default : 3000
+    autolisten: boolean; // default : true
   }>;
 }) => {
   let routes = [];
@@ -58,9 +59,10 @@ const Isorm = ({
 
   app.use(routes);
 
-  app.listen(configs?.port || 3000, () => {
-    console.log("App Running");
-  });
+  if (!configs?.autolisten)
+    app.listen(configs?.port || 3000, () => {
+      console.log("App Was Successfully Runned In ISORM");
+    });
 
   return app;
 };
