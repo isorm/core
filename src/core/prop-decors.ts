@@ -1,4 +1,4 @@
-import { restPropDecorHandler } from "./../libs/restPropDecorHandler";
+import { restPropDecorHandler } from "../libs/restPropDecorHandler";
 
 export const Req = (target: any, propKey: string, paramIndex: number) => {
   restPropDecorHandler({

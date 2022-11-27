@@ -20,7 +20,7 @@ export const restDecorHandler = ({
   const route = (cls?.route || []) as MethodRouteObject[];
 
   const methodIndex = route.findIndex(
-    (item) => item.constructor.name === target.constructor.name,
+    (item) => item.constructorMethodName === target.name,
   );
 
   if (methodIndex === -1) {
@@ -30,6 +30,7 @@ export const restDecorHandler = ({
       constructor: target,
       constructorMethod: target,
       constructorMethodName: propKey,
+      modules: [],
       props: [],
     });
   } else
@@ -37,6 +38,7 @@ export const restDecorHandler = ({
       ...route[methodIndex],
       constructorMethod: target,
       constructorMethodName: propKey,
+      modules: [],
       method,
       endpoint: path || "/",
     };

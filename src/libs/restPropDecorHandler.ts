@@ -15,7 +15,7 @@ export const restPropDecorHandler = ({
   const route = (cls?.route || []) as MethodRouteObject[];
 
   const methodIndex = route.findIndex(
-    (item) => item.constructor.name === target.constructor.name,
+    (item) => item.constructorMethodName === target.name,
   );
 
   const prop = { index: paramIndex, type: propType, attach: {} };

@@ -50,6 +50,7 @@ const Isorm = ({
 
           return next();
         },
+        ...(item.modules || []),
         (...data: any[]) => info.instance[item.constructorMethodName](...data),
       );
     });

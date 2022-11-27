@@ -1,8 +1,8 @@
 import { Get } from "../../src/core/Restful";
-import { Controller } from "../../src/core/class-decorators";
+import { Controller } from "../core/class-decors";
 import { TestService } from "./services-helpers";
 import { Request } from "express";
-import { Req } from "../../src/core/prop-decorator";
+import { Req } from "../core/prop-decors";
 
 @Controller("/")
 export class TestController {

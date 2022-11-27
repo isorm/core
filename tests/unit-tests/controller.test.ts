@@ -1,9 +1,9 @@
 import "jest";
-import { Controller } from "../../src/core/class-decorators";
+import { Controller } from "../core/class-decors";
 import { Injectable } from "../../src/libs/DI";
 import Isorm from "../../src/core/isorm";
 import { Get } from "../../src/core/Restful";
-import { Req } from "../../src/core/prop-decorator";
+import { Req } from "../core/prop-decors";
 import { Request, Response } from "express";
 
 describe("controller tests", () => {
