@@ -12,7 +12,7 @@ export class Container {
     ) as any;
     const cls = new target(...injections) as T;
 
-    AppMetadata.set(target, { path: path || "/", instance: cls });
+    AppMetadata.set(target, { path: path || "/", instance: cls, modules: [] });
 
     return cls;
   }

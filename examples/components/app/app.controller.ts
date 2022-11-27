@@ -1,7 +1,18 @@
 import { Request, Response } from "express";
-import { Controller, Get, Req, Res, Use } from "../../../src/isorm-core";
+import {
+  Controller,
+  Get,
+  Module,
+  Req,
+  Res,
+  Use,
+} from "../../../src/isorm-core";
 import AppService from "./app.service";
 
+@Module((req, res, next) => {
+  console.log("Running App Controller");
+  return next();
+})
 @Controller("/app")
 class AppController {
   constructor(private service: AppService) {}

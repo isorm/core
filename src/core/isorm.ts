@@ -32,6 +32,7 @@ const Isorm = ({
 
       route[requestMethod](
         `${endpoint}`,
+        ...info.modules,
         (req: Request, res: Response, next: NextFunction) => {
           const props = item.props;
 

@@ -1,15 +1,8 @@
-import { MethodRouteObject } from "../../index.d";
+import { DatasetSchemaType } from "../../index.d";
 import { APP_DATA } from "../core/defaults";
 
 export class AppMetadata {
-  static set<T>(
-    target: { new (): unknown },
-    dataset: Partial<{
-      path: string;
-      instance: T;
-      route: MethodRouteObject[];
-    }>,
-  ) {
+  static set<T>(target: { new (): unknown }, dataset: DatasetSchemaType) {
     let data = Reflect.getMetadata(APP_DATA, target) || {};
 
     data = {

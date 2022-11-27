@@ -1,14 +1,8 @@
-import { NextFunction, Request, Response } from "express";
+import { ModuleType } from "../../index.d";
 import { AppMetadata } from "../libs/metadata";
 
 export const Use =
-  (
-    ...modules: ((
-      req: Request,
-      res: Response,
-      next: NextFunction,
-    ) => NextFunction | void)[]
-  ) =>
+  (...modules: ModuleType[]) =>
   (target: any, key: string, descriptor: PropertyDescriptor) => {
     const _ = AppMetadata.get(target.constructor);
 
