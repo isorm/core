@@ -1,4 +1,4 @@
-export * from "../typings/index.d";
+export * from "./types";
 export * from "./core/defaults";
 export * from "./libs/DI";
 export * from "./core/wrappers";

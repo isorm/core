@@ -1,4 +1,4 @@
-import { MethodRouteObject } from "../../typings";
+import { MethodRouteObject } from "../types";
 import { Container } from "./DI";
 import { AppMetadata } from "./metadata";
 

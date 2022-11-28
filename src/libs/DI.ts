@@ -1,6 +1,5 @@
 import "reflect-metadata";
-import { ClassType } from "../../typings";
-import { INJECTIONS } from "../isorm-core";
+import { ClassType, INJECTIONS } from "../isorm-core";
 import { AppMetadata } from "./metadata";
 
 export class Container {

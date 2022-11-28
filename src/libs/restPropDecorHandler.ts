@@ -1,4 +1,4 @@
-import { MethodRouteObject } from "../../typings";
+import { MethodRouteObject } from "../types";
 import { AppMetadata } from "./metadata";
 
 export const restPropDecorHandler = ({

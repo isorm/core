@@ -29,7 +29,7 @@ export type ModuleType = (
   next: NextFunction,
 ) => NextFunction | void;
 
-export type DatasetSchemaType = Partial<{
+export type DatasetSchemaType<T> = Partial<{
   path: string;
   instance: T;
   route: MethodRouteObject[];

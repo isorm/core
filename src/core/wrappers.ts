@@ -1,9 +1,11 @@
-import { MethodDecorWrapperOptionsType } from "../../typings";
-import { MethodDecorWrapperType } from "../../typings";
 import { AppMetadata } from "../libs/metadata";
 import { APP_DATA } from "./defaults";
 import { NextFunction, Request, Response } from "express";
-import { Container } from "../isorm-core";
+import {
+  Container,
+  MethodDecorWrapperOptionsType,
+  MethodDecorWrapperType,
+} from "../isorm-core";
 
 export const methodDecorWrapper = <T extends MethodDecorWrapperOptionsType>(
   cb: ({

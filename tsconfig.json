@@ -5,19 +5,19 @@
     "emitDecoratorMetadata": true,
     "module": "commonjs",
     "moduleResolution": "Node",
-    "rootDirs": ["src", "tests"],
+    // "rootDirs": ["src", "tests"],
+    "rootDir": "src",
+    "outDir": "dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "preserveSymlinks": true,
     "skipLibCheck": true,
-    "allowJs": true,
-    "typeRoots": ["./typings"]
+    "allowJs": true
   },
   "ts-node": {
     "files": true
   },
-  "files": ["typings/index.d.ts"],
-  "include": ["src", "typings/index.d.ts", "tests/**/*", "examples/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
 }

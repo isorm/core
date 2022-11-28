@@ -1,5 +1,5 @@
-import { ModuleType } from "../../typings";
 import { AppMetadata } from "../libs/metadata";
+import { ModuleType } from "../types";
 
 export const Use =
   (...modules: ModuleType[]) =>

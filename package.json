@@ -1,8 +1,8 @@
 {
   "name": "isorm-core",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
-  "main": "src/isorm-core.ts",
+  "main": "dist/isorm-core.js",
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --watch",
@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/isorm/core/issues"
   },
-  "types": "typings/index.d.ts",
+  "types": "dist/isorm-core.ts",
   "homepage": "https://github.com/isorm/core#readme",
   "devDependencies": {
     "@jest/globals": "^29.3.1",
