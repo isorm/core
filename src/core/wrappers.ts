@@ -1,5 +1,5 @@
-import { MethodDecorWrapperOptionsType } from "./../../index.d";
-import { MethodDecorWrapperType } from "../../index.d";
+import { MethodDecorWrapperOptionsType } from "../../typings";
+import { MethodDecorWrapperType } from "../../typings";
 import { AppMetadata } from "../libs/metadata";
 import { APP_DATA } from "./defaults";
 import { NextFunction, Request, Response } from "express";

@@ -1,6 +1,6 @@
 import { Request, Response, Router, NextFunction } from "express";
 import { join } from "path";
-import { IsormType } from "../../index.d";
+import { IsormType } from "../../typings";
 import { Container } from "../libs/DI";
 import { AppMetadata } from "../libs/metadata";
 import app from "./app";

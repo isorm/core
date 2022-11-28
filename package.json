@@ -2,11 +2,11 @@
   "name": "core",
   "version": "1.0.0",
   "description": "",
-  "main": "examples/bootstrap.ts",
+  "main": "src/isorm-core.ts",
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "example": "ts-node-dev --respawn examples/bootstrap.ts src/**/*"
+    "example": "ts-node --files src/isorm-core.ts"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   "bugs": {
     "url": "https://github.com/isorm/core/issues"
   },
+  "types": "typings/index.d.ts",
   "homepage": "https://github.com/isorm/core#readme",
   "devDependencies": {
     "@jest/globals": "^29.3.1",

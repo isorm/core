@@ -1,4 +1,4 @@
-import { ModuleType } from "../../index.d";
+import { ModuleType } from "../../typings";
 import { AppMetadata } from "../libs/metadata";
 
 export const Use =

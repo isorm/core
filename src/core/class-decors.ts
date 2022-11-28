@@ -1,4 +1,4 @@
-import { ModuleType } from "../../index.d";
+import { ModuleType } from "../../typings";
 import { Container } from "../libs/DI";
 import { AppMetadata } from "../libs/metadata";
 

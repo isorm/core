@@ -1,4 +1,4 @@
-import { DatasetSchemaType } from "../../index.d";
+import { DatasetSchemaType } from "../../typings";
 import { APP_DATA } from "../core/defaults";
 
 export class AppMetadata {
