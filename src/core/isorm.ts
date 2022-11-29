@@ -15,7 +15,7 @@ const Isorm = ({ controllers, modules, configs }: IsormType) => {
 
     const route = Router() as any;
 
-    route.use(...(modules || []));
+    (modules || []).length > 0 && route.use(...(modules || []));
 
     (info.route || []).map((item: any, i: number) => {
       const endpoint = join("/", info?.path, item.endpoint)
