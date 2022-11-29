@@ -38,7 +38,7 @@ export type DatasetSchemaType<T> = Partial<{
 
 export type IsormType = {
   controllers: { new (...args: any): unknown }[];
-  modules: ModuleType[];
+  modules?: ModuleType[];
   configs?: Partial<{
     port: number; // default : 3000
     autolisten: boolean; // default : true
