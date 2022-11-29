@@ -64,4 +64,4 @@ const Isorm = ({ controllers, modules, configs }: IsormType) => {
   return app;
 };
 
-export default Isorm;
+export { Isorm };

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2016",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "module": "commonjs",
@@ -13,10 +13,8 @@
     "strict": true,
     "preserveSymlinks": true,
     "skipLibCheck": true,
-    "allowJs": true
-  },
-  "ts-node": {
-    "files": true
+    "declaration": true,
+    "types": ["node", "reflect-metadata"]
   },
   "include": ["src"],
   "exclude": ["dist", "node_modules"]
