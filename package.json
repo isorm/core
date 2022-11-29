@@ -1,11 +1,12 @@
 {
   "name": "isorm-core",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "",
   "main": "dist/app.js",
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --watch",
+    "build": "tsc",
     "example": "ts-node --files src/isorm-core.ts"
   },
   "repository": {
@@ -17,6 +18,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/isorm/core/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "types": "dist/app.d.ts",
   "homepage": "https://github.com/isorm/core#readme",
