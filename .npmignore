@@ -1,9 +1,0 @@
-.github
-.DS_Store
-.git
-.gitignore
-.npmignore
-.npmrc
-npm-debug.log
-tests
-jest.config.js
