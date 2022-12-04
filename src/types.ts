@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from "express";
+import { Express } from "express";
 
 export type ClassType = { new (...args: unknown[]): unknown };
 
@@ -29,6 +30,8 @@ export type ModuleType = (
   next: NextFunction,
 ) => NextFunction | void;
 
+export type PackageType = (app: Express) => void;
+
 export type DatasetSchemaType<T> = Partial<{
   path: string;
   instance: T;
@@ -39,6 +42,7 @@ export type DatasetSchemaType<T> = Partial<{
 export type IsormType = {
   controllers: { new (...args: any): unknown }[];
   modules?: ModuleType[];
+  packages?: PackageType[];
   configs?: Partial<{
     port: number; // default : 3000
     autolisten: boolean; // default : true

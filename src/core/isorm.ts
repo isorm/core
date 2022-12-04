@@ -6,7 +6,7 @@ import { IsormType } from "../types";
 import app from "./app";
 import { APP_DATA } from "./defaults";
 
-const Isorm = ({ controllers, modules, configs }: IsormType) => {
+const Isorm = ({ controllers, modules, configs, packages }: IsormType) => {
   let routes = [];
   let i = 0;
   for (i = 0; i < controllers.length; i++) {
@@ -53,6 +53,8 @@ const Isorm = ({ controllers, modules, configs }: IsormType) => {
 
     routes.push(route);
   }
+
+  (packages || []).map((pkg) => pkg(app));
 
   app.use(routes);
 
