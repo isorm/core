@@ -3,4 +3,5 @@ module.exports = {
   preset: "ts-jest",
   isolatedModules: true,
   testEnvironment: "node",
+  experimentalDecorators: true,
 };

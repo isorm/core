@@ -7,6 +7,7 @@ export type MethodRouteObject = {
   method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
   endpoint: string;
   constructor: any;
+  args: [Request, Response, NextFunction] | [];
   props: { index: number; type: string; attach: any }[];
   constructorMethod: any;
   constructorMethodName: any;

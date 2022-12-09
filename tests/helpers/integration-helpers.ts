@@ -1,5 +1,5 @@
 import express from "express";
-import Isorm from "../../src/core/isorm";
+import { Isorm } from "../../src/isorm-core";
 import { TestController } from "./controllers-helpers";
 
 export class IntegrationHelpers {

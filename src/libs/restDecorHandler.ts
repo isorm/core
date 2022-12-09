@@ -32,6 +32,7 @@ export const restDecorHandler = ({
       constructorMethodName: propKey,
       modules: [],
       props: [],
+      args: [],
     });
   } else
     route[methodIndex] = {

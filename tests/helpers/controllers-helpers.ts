@@ -1,8 +1,6 @@
-import { Get } from "../../src/core/Restful";
-import { Controller } from "../core/class-decors";
 import { TestService } from "./services-helpers";
 import { Request } from "express";
-import { Req } from "../core/prop-decors";
+import { Controller, Get, Req } from "../../src/isorm-core";
 
 @Controller("/")
 export class TestController {

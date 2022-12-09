@@ -1,4 +1,4 @@
-import { Injectable } from "../../src/libs/DI";
+import { Injectable } from "../../src/isorm-core";
 
 @Injectable
 export class TestService {
