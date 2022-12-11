@@ -47,5 +47,6 @@ export type IsormType = {
   configs?: Partial<{
     port: number; // default : 3000
     autolisten: boolean; // default : true
+    indexHTMLPath: string; // default ./public/index.html
   }>;
 };

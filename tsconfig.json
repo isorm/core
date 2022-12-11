@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "target": "ES2016",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,

@@ -10,10 +10,6 @@ export class IntegrationHelpers {
 
     const app = Isorm({
       controllers: [TestController],
-    }); 
-
-    app.listen(3000, () => {
-      console.log("App Running");
     });
 
     this.appInstance = app;
