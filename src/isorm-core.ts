@@ -10,3 +10,4 @@ export * from "./core/class-decors";
 export * from "./core/isorm";
 export * from "./core/React";
 export * from "./libs/utils";
+export * from "./core/plugins/plugins";
