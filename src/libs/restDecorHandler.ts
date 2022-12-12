@@ -40,6 +40,7 @@ export const restDecorHandler = ({
       constructorMethod: target,
       constructorMethodName: propKey,
       modules: [],
+      after: [],
       method,
       endpoint: path || "/",
     };

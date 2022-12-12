@@ -25,23 +25,25 @@ export const Render =
     AppMetadata.set(target.constructor, data);
   };
 
-export const renderer = (
-  res: Response,
-  props: unknown[],
-  components: Function[],
-  htmlPath?: string,
-) => {
-  const data = fs.readFileSync(
-    path.resolve(htmlPath || "./public/index.html"),
-    "utf8",
-  );
+// export const renderer = (
+//   res: Response,
+//   props: unknown[],
+//   components: Function[],
+//   htmlPath?: string,
+// ) => {
+//   const data = fs.readFileSync(
+//     path.resolve(htmlPath || "./public/index.html"),
+//     "utf8",
+//   );
 
-  return res.send(
-    data.replace(
-      '<div id="root"></div>',
-      `<div id="root">${components.map((Component) =>
-        ReactDOMServer.renderToString(<Component {...props} />),
-      )}</div>`,
-    ),
-  );
-};
+//   const Component = components[0];
+
+//   return res.send(
+//     data.replace(
+//       '<div id="root"></div>',
+//       `<div id="root">${ReactDOMServer.renderToString(
+//         <Component {...props} />,
+//       )}</div>`,
+//     ),
+//   );
+// };

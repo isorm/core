@@ -5,7 +5,6 @@ import { AppMetadata } from "../libs/metadata";
 import { IsormType } from "../types";
 import app from "./app";
 import { APP_DATA } from "./defaults";
-import { renderer } from "./React";
 
 const Isorm = ({ controllers, modules, configs, packages }: IsormType) => {
   let routes = [];
@@ -52,15 +51,18 @@ const Isorm = ({ controllers, modules, configs, packages }: IsormType) => {
         (...data: any[]) => {
           const res = info.instance[item.constructorMethodName](...data);
 
-          if (!res?.props) return res;
+          if (!res?.props && !res?.pass) return res;
 
-          return renderer(
-            res,
-            res.props,
-            info.route[i].components,
-            configs?.indexHTMLPath,
-          );
+          return data[2](res);
+          // return renderer(
+          //   res,
+          //   res.props,
+          //   info.route[i].components,
+
+          //   configs?.indexHTMLPath,
+          // );
         },
+        ...(item?.after || []),
       );
     });
 
