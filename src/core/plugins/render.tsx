@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from "express";
 import fs from "fs";
 import getAllNestedFiles from "../../libs/getAllNestedFiles";
 
-const render = (Component: React.FC) => {
+export const render = (Component: React.FC) => {
   return (args: any, req: Request, res: Response, next: NextFunction) => {
     const files = [
       ...(getAllNestedFiles("pages", ".tsx") || []),
@@ -51,4 +51,3 @@ const render = (Component: React.FC) => {
   };
 };
 
-export default render;
