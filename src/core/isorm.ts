@@ -2,7 +2,7 @@ import { Request, Response, Router, NextFunction } from "express";
 import { join } from "path";
 import { Container } from "../libs/DI";
 import { AppMetadata } from "../libs/metadata";
-import { IsormType } from "../types";
+import { IsormType } from "../isorm-core";
 import app from "./app";
 import { APP_DATA } from "./defaults";
 

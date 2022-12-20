@@ -59,7 +59,7 @@ export type IsormType = {
   }>;
 };
 
-export namespace Isorm {
+export namespace IS {
   export type ReactRouter = { pages: React.FC[] };
   export type ReactPage = Partial<{
     children: React.ReactNode;
