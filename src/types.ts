@@ -60,11 +60,11 @@ export type IsormType = {
 };
 
 export namespace IS {
-  export type ReactRouter = { pages: React.FC[] };
   export type ReactPage<T = {}> = Partial<{
     children: React.ReactNode;
   }> & {
     $query: { params: { name: string; value: string }[]; all: string };
     $params: { [K in string]: K };
   } & { [K in keyof T]: T[K] };
+  export type ReactRouter = { pages: React.FC[] };
 }

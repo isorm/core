@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { IS } from "../../isorm-core";
 
-export const IsormRouter = ({ pages }: IS.ReactRouter) => {
+export function IsormRouter<P extends IS.ReactRouter>({ pages }: P) {
   const [Component, setComponent] = useState(null) as any;
   const [query, setQuery] = useState({ params: [], all: "" } as any);
   const [params, setParams] = useState({});
@@ -71,4 +71,4 @@ export const IsormRouter = ({ pages }: IS.ReactRouter) => {
       $params={params}
     />
   );
-};
+}
