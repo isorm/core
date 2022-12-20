@@ -1,23 +1,54 @@
 import React from "react";
 import { NextFunction, Request, Response } from "express";
-import path from "path";
 import fs from "fs";
-import ReactDOMServer from "react-dom/server";
+import getAllNestedFiles from "../../libs/getAllNestedFiles";
 
-export default function render(Component: any) {
+const render = (Component: React.FC) => {
   return (args: any, req: Request, res: Response, next: NextFunction) => {
-    const data = fs.readFileSync(path.resolve("./public/index.html"), "utf8");
+    const files = [
+      ...(getAllNestedFiles("pages", ".tsx") || []),
+      ...(getAllNestedFiles("pages", ".jsx") || []),
+    ];
 
-    const dom = ReactDOMServer.renderToString(
-      React.createElement(Component, args.props),
-    );
+    let i = files.length;
 
-    return res.send(
-      data.replace(
-        '<div id="root"></div>',
-        `<script>window.__PROPS__=${JSON.stringify(args.props)}</script>
-        <div id="root">${dom}</div>`,
-      ),
-    );
+    let fileName = "";
+
+    while (i--) {
+      const file = files[i];
+
+      const componentExists = fs
+        .readFileSync(file)
+        .includes(`export default ${Component.name}`);
+      if (componentExists) {
+        fileName = file;
+        break;
+      }
+    }
+
+    const page = Component.name
+      .split("")
+      .map((i: any) => i.replace(/\$/, "\\$"))
+      .join("");
+
+    return res.send(`
+      <script>
+      window.__PROPS__=${JSON.stringify(args.props)}
+      window.__IMPORTS__=${JSON.stringify({
+        page,
+        pageName: fileName
+          .split("\\")
+          .slice(-1)[0]
+          .split(".")[0]
+          .split("")
+          .map((i: any) => i.replace(/\$/, "\\$"))
+          .join(""),
+      })}
+      </script>
+      <div id="root"></div>
+      <script src="/bundle.js"></script>
+      `);
   };
-}
+};
+
+export default render;

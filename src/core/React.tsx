@@ -1,9 +1,4 @@
-import { APP_DATA, dispatchDescriptor } from "../isorm-core";
-import fs from "fs";
-import path from "path";
 import { AppMetadata } from "../libs/metadata";
-import { Response } from "express";
-import ReactDOMServer from "react-dom/server";
 
 export const Render =
   (Component: Function) =>

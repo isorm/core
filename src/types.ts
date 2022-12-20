@@ -58,3 +58,13 @@ export type IsormType = {
     indexHTMLPath: string; // default ./public/index.html
   }>;
 };
+
+export namespace Isorm {
+  export type ReactRouter = { pages: React.FC[] };
+  export type ReactPage = Partial<{
+    children: React.ReactNode;
+  }> & {
+    $query: { params: { name: string; value: string }[]; all: string };
+    $params: { [K in string]: K };
+  };
+}
