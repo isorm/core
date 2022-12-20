@@ -66,5 +66,8 @@ export namespace IS {
     $query: { params: { name: string; value: string }[]; all: string };
     $params: { [K in string]: K };
   } & { [K in keyof T]: T[K] };
-  export type ReactRouter = { pages: React.FC[] };
+
+  export type ReactRouter = {
+    pages: React.FC<any>[];
+  };
 }
