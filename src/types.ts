@@ -71,3 +71,11 @@ export namespace IS {
     pages: React.FC<any>[];
   };
 }
+
+export namespace EventBusNS {
+  export type Subscribe = {
+    [key: string]: { fn: Function; pubId: number }[];
+  };
+
+  export type Router = Map<string, Subscribe>;
+}
