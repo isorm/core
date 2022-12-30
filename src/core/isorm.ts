@@ -48,19 +48,12 @@ const Isorm = ({ controllers, modules, configs, packages }: IsormType) => {
           return next();
         },
         ...(item.modules || []),
-        (...data: any[]) => {
-          const res = info.instance[item.constructorMethodName](...data);
+        async (...data: any[]) => {
+          const res = await info.instance[item.constructorMethodName](...data);
 
           if (!res?.props && !res?.pass) return res;
 
           return data[2](res);
-          // return renderer(
-          //   res,
-          //   res.props,
-          //   info.route[i].components,
-
-          //   configs?.indexHTMLPath,
-          // );
         },
         ...(item?.after || []),
       );
