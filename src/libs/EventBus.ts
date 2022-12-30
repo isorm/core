@@ -1,6 +1,6 @@
 import { EventBusNS } from "../types";
 
-class EventBus {
+export class EventBus {
   private declare router: EventBusNS.Router;
   private static instance: EventBus;
   private declare eventId: number;
@@ -75,5 +75,3 @@ class EventBus {
     };
   }
 }
-
-export default EventBus;

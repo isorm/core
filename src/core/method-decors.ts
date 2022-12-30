@@ -1,5 +1,4 @@
-import { Container } from "../isorm-core";
-import EventBus from "../libs/EventBus";
+import { Container, EventBus } from "../isorm-core";
 import { AppMetadata } from "../libs/metadata";
 import { MiddlewareType, ModuleType } from "../types";
 

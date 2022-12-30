@@ -1,6 +1,7 @@
 export * from "./types";
 export * from "./core/defaults";
 export * from "./libs/DI";
+export * from "./libs/EventBus";
 export * from "./core/wrappers";
 export * from "./core/app";
 export * from "./core/Restful";
