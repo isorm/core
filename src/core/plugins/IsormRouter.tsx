@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { IS } from "../../isorm-core";
 
-export function IsormRouter<P extends IS.ReactRouter>({ pages }: P) {
+export const IsormRouter = ({ pages }: { pages: React.FC<any>[] }) => {
   const [Component, setComponent] = useState(null) as any;
   const [query, setQuery] = useState({ params: [], all: "" } as any);
   const [params, setParams] = useState({});
+  const [props, setProps] = useState({});
 
   const componentRunner = useCallback(async () => {
     const path = window.location.pathname.replace(/^\//, "");
@@ -56,6 +57,12 @@ export function IsormRouter<P extends IS.ReactRouter>({ pages }: P) {
       setParams(data);
     }
 
+    const props = (window as any)?.__PROPS__ || {};
+
+    if (document.body.children[0].tagName === "SCRIPT")
+      document.body.removeChild(document.body.children[0]);
+
+    setProps(props);
     setComponent(() => component);
   }, [Component]);
 
@@ -64,11 +71,5 @@ export function IsormRouter<P extends IS.ReactRouter>({ pages }: P) {
   }, [componentRunner]);
 
   if (!Component) return null;
-  return (
-    <Component
-      {...((window as any)?.__PROPS__ || {})}
-      $query={query}
-      $params={params}
-    />
-  );
-}
+  return <Component {...props} $query={query} $params={params} />;
+};
