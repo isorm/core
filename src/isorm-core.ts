@@ -12,3 +12,4 @@ export * from "./core/isorm";
 export * from "./core/React";
 export * from "./libs/utils";
 export * from "./core/plugins/plugins";
+export * from "./core/packages/packages";
